@@ -14,6 +14,12 @@ pep8:
    - python -V
    - find . -type f -name "*.py" | xargs pep8 --count --show-source
 
+execute_bofh:
+  stage: test
+  image: "python:2.7-alpine"
+  script:
+    - "python bofh.py"
+
 github:
   stage: mirror
   only:
